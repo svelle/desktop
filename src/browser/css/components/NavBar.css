@@ -1,4 +1,18 @@
-.TabBar .teamTabItem span {
+.NavBar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.NavBar .teamTabItem {
+  -webkit-app-region: no-drag;
+}
+
+.NavBar .navBarItem {
+  -webkit-app-region: no-drag;
+}
+
+.NavBar .teamTabItem span {
+  -webkit-app-region: no-drag;
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6,7 +20,7 @@
   max-width: 170px;
 }
 
-.TabBar>li>a {
+.NavBar>li>a {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 2px 2px 0 0;
   border: 1px solid #ddd;
@@ -18,13 +32,13 @@
   padding: 0 15px;
 }
 
-.TabBar>li.teamTabItem:not(.active)>a:hover {
+.NavBar>li.teamTabItem:not(.active)>a:hover {
   background-color: #e6e6e6;
   border: 1px solid #ddd;
   transition: background-color 0.2s ease;
 }
 
-.TabBar .TabBar-addServerButton>a {
+.NavBar .TabBar-addServerButton>a {
   border: none;
   background: transparent;
   color: #999;
@@ -32,14 +46,14 @@
   line-height: 31px;
 }
 
-.TabBar .TabBar-addServerButton>a:hover {
+.NavBar .TabBar-addServerButton>a:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
   transition: background-color 0.2s ease;
 }
 
-.TabBar .TabBar-badge {
+.NavBar .TabBar-badge {
   background: #FF1744;
   float: right;
   color: white;
@@ -53,11 +67,11 @@
   border-radius: 50%;
 }
 
-.TabBar .TabBar-badge.TabBar-badge-nomention {
+.NavBar .TabBar-badge.TabBar-badge-nomention {
   font-size: 22pt;
   line-height: 18px;
 }
 
-.TabBar .teamTabItem-unread {
+.NavBar .teamTabItem-unread {
   font-weight: bold;
 }

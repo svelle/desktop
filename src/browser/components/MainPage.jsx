@@ -17,7 +17,7 @@ import Utils from '../../utils/util.js';
 
 import LoginModal from './LoginModal.jsx';
 import MattermostView from './MattermostView.jsx';
-import TabBar from './TabBar.jsx';
+import NavBar from './NavBar.jsx';
 import HoveringURL from './HoveringURL.jsx';
 import PermissionRequestDialog from './PermissionRequestDialog.jsx';
 import Finder from './Finder.jsx';
@@ -302,7 +302,7 @@ export default class MainPage extends React.Component {
     if (this.props.teams.length > 1) {
       tabsRow = (
         <Row>
-          <TabBar
+          <NavBar
             id='tabBar'
             teams={this.props.teams}
             sessionsExpired={this.state.sessionsExpired}
@@ -452,6 +452,6 @@ MainPage.propTypes = {
   onSelectSpellCheckerLocale: PropTypes.func.isRequired,
   deeplinkingUrl: PropTypes.string,
   showAddServerButton: PropTypes.bool.isRequired,
-  requestingPermission: TabBar.propTypes.requestingPermission,
+  requestingPermission: NavBar.propTypes.requestingPermission,
   onClickPermissionDialog: PropTypes.func,
 };

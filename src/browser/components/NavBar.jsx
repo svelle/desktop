@@ -7,7 +7,7 @@ import {Glyphicon, Nav, NavItem, Overlay} from 'react-bootstrap';
 
 import PermissionRequestDialog from './PermissionRequestDialog.jsx';
 
-export default class TabBar extends React.Component { // need "this"
+export default class NavBar extends React.Component { // need "this"
   render() {
     const tabs = this.props.teams.map((team, index) => {
       const sessionExpired = this.props.sessionsExpired[index];
@@ -98,7 +98,7 @@ export default class TabBar extends React.Component { // need "this"
     }
     return (
       <Nav
-        className='TabBar'
+        className='NavBar'
         id={this.props.id}
         bsStyle='tabs'
         activeKey={this.props.activeKey}
@@ -110,13 +110,33 @@ export default class TabBar extends React.Component { // need "this"
           }
         }}
       >
+        <NavItem
+          className='navBarItem'
+        >
+          <Glyphicon glyph='menu-hamburger'/>
+        </NavItem>
         { tabs }
+        <NavItem
+          className='navBarItem'
+        >
+          <Glyphicon glyph='chevron-down'/>
+        </NavItem>
+        <NavItem
+          className='navBarItem'
+        >
+          <Glyphicon glyph='chevron-up'/>
+        </NavItem>
+        <NavItem
+          className='navBarItem'
+        >
+          <Glyphicon glyph='remove'/>
+        </NavItem>
       </Nav>
     );
   }
 }
 
-TabBar.propTypes = {
+NavBar.propTypes = {
   activeKey: PropTypes.number,
   id: PropTypes.string,
   onSelect: PropTypes.func,

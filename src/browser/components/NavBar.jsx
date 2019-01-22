@@ -5,6 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Glyphicon, Nav, NavItem, Overlay} from 'react-bootstrap';
 
+import {BrowserWindow} from 'electron';
+
 import PermissionRequestDialog from './PermissionRequestDialog.jsx';
 
 export default class NavBar extends React.Component { // need "this"
@@ -31,11 +33,11 @@ export default class NavBar extends React.Component { // need "this"
       let badgeDiv;
       if (sessionExpired) {
         badgeDiv = (
-          <div className='TabBar-badge TabBar-badge-nomention'>{'•'}</div>
+          <div className='NavBar-badge NavBar-badge-noMention'>{'•'}</div>
         );
       } else if (mentionCount !== 0) {
         badgeDiv = (
-          <div className='TabBar-badge'>
+          <div className='NavBar-badge'>
             {mentionCount}
           </div>
         );
@@ -44,7 +46,7 @@ export default class NavBar extends React.Component { // need "this"
       const requestingPermission = this.props.requestingPermission[index];
       const permissionOverlay = (
         <Overlay
-          className='TabBar-permissionOverlay'
+          className='NavBar-permissionOverlay'
           placement='bottom'
           show={requestingPermission && this.props.activeKey === index}
           target={() => this.refs[id]}
@@ -85,7 +87,7 @@ export default class NavBar extends React.Component { // need "this"
     if (this.props.showAddServerButton === true) {
       tabs.push(
         <NavItem
-          className='TabBar-addServerButton'
+          className='NavBar-addServerButton'
           key='addServerButton'
           id='addServerButton'
           eventKey='addServerButton'
@@ -118,6 +120,9 @@ export default class NavBar extends React.Component { // need "this"
         { tabs }
         <NavItem
           className='navBarItem'
+          onClick={() => {
+            window.resizeTo(screen.width, screen.height);
+          }}
         >
           <Glyphicon glyph='chevron-down'/>
         </NavItem>
@@ -128,6 +133,9 @@ export default class NavBar extends React.Component { // need "this"
         </NavItem>
         <NavItem
           className='navBarItem'
+          onClick={() => {
+            window.close();
+          }}
         >
           <Glyphicon glyph='remove'/>
         </NavItem>

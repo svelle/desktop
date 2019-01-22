@@ -59,7 +59,7 @@ describe('browser/index.html', function desc() {
     }));
     await this.app.restart();
 
-    const existing = await this.app.client.isExisting('#tabBar');
+    const existing = await this.app.client.isExisting('#NavBar');
     existing.should.be.false;
   });
 

@@ -74,7 +74,7 @@
         "key-spacing": [2, {"beforeColon": false, "afterColon": true, "mode": "strict"}],
         "keyword-spacing": [2, {"before": true, "after": true, "overrides": {}}],
         "line-comment-position": 0,
-        "linebreak-style": 2,
+        "linebreak-style": 0,
         "lines-around-comment": [2, { "beforeBlockComment": true, "beforeLineComment": true, "allowBlockStart": true, "allowBlockEnd": true }],
         "max-lines": [1, {"max": 450, "skipBlankLines": true, "skipComments": false}],
         "max-nested-callbacks": [2, {"max":2}],

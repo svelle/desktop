@@ -303,7 +303,7 @@ export default class MainPage extends React.Component {
       tabsRow = (
         <Row>
           <NavBar
-            id='tabBar'
+            id='navBar'
             teams={this.props.teams}
             sessionsExpired={this.state.sessionsExpired}
             unreadCounts={this.state.unreadCounts}

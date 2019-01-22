@@ -38,7 +38,7 @@
   transition: background-color 0.2s ease;
 }
 
-.NavBar .TabBar-addServerButton>a {
+.NavBar .NavBar-addServerButton>a {
   border: none;
   background: transparent;
   color: #999;
@@ -46,14 +46,14 @@
   line-height: 31px;
 }
 
-.NavBar .TabBar-addServerButton>a:hover {
+.NavBar .NavBar-addServerButton>a:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
   transition: background-color 0.2s ease;
 }
 
-.NavBar .TabBar-badge {
+.NavBar .NavBar-badge {
   background: #FF1744;
   float: right;
   color: white;
@@ -67,7 +67,7 @@
   border-radius: 50%;
 }
 
-.NavBar .TabBar-badge.TabBar-badge-nomention {
+.NavBar .NavBar-badge.NavBar-badge-noMention {
   font-size: 22pt;
   line-height: 18px;
 }

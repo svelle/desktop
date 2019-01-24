@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import {app, BrowserWindow, remote} from 'electron';
+import {app, BrowserWindow} from 'electron';
 
 function saveWindowState(file, window) {
   const windowState = window.getBounds();
@@ -138,7 +138,5 @@ function createMainWindow(config, options) {
 
   return mainWindow;
 }
-
-
 
 export default createMainWindow;

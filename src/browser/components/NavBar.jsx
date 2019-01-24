@@ -131,7 +131,7 @@ export default class NavBar extends React.Component { // need "this"
         }}
       >
         <NavItem
-          className='navBarItem MenuIcon'
+          className='menuBarItem'
         >
           <img 
             src='../assets/appicon.png'
@@ -144,8 +144,8 @@ export default class NavBar extends React.Component { // need "this"
       className='NavBar MenuBar'
       bsStyle='tabs'
       >
-        <NavItem
-            className='navBarItem'
+          <NavItem
+            className='menuBarItem'
             onClick={() => {
               minimizeWindow();
             }}
@@ -153,7 +153,7 @@ export default class NavBar extends React.Component { // need "this"
             <Glyphicon glyph='minus'/>
           </NavItem>
           <NavItem
-            className='navBarItem'
+            className='menuBarItem'
             onClick={() => {
               maximizeWindow();
             }}
@@ -161,7 +161,7 @@ export default class NavBar extends React.Component { // need "this"
             <Glyphicon glyph='unchecked'/>
           </NavItem>
           <NavItem
-            className='navBarItem'
+            className='menuBarItem'
             onClick={() => {
               closeWindow();
             }}

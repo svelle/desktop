@@ -27,6 +27,7 @@
 
 .NavBar .navBarItem {
   -webkit-app-region: no-drag;
+  font-size: 12px;
 }
 
 .NavBar .teamTabItem span {
@@ -56,7 +57,7 @@
   transition: background-color 0.2s ease;
 }
 
-.NavBar .NavBar-addServerButton>a {
+.NavBar .TabBar-addServerButton>a {
   -webkit-app-region: no-drag;
   border: none;
   background: transparent;
@@ -65,14 +66,14 @@
   line-height: 31px;
 }
 
-.NavBar .NavBar-addServerButton>a:hover {
+.NavBar .TabBar-addServerButton>a:hover {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
   transition: background-color 0.2s ease;
 }
 
-.NavBar .NavBar-badge {
+.NavBar .TabBar-badge {
   background: #FF1744;
   float: right;
   color: white;
@@ -86,7 +87,11 @@
   border-radius: 50%;
 }
 
-.NavBar .NavBar-badge.NavBar-badge-noMention {
+.NavBar .MenuIcon {
+  padding: 0;
+}
+
+.NavBar .TabBar-badge.TabBar-badge-noMention {
   font-size: 22pt;
   line-height: 18px;
 }

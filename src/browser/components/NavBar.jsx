@@ -1,6 +1,7 @@
 // Copyright (c) 2015-2016 Yuya Ochiai
 // Copyright (c) 2016-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Glyphicon, Nav, NavItem, Overlay} from 'react-bootstrap';
@@ -48,11 +49,11 @@ export default class NavBar extends React.Component { // need "this"
       let badgeDiv;
       if (sessionExpired) {
         badgeDiv = (
-          <div className='NavBar-badge NavBar-badge-noMention'>{'•'}</div>
+          <div className='TabBar-badge TabBar-badge-noMention'>{'•'}</div>
         );
       } else if (mentionCount !== 0) {
         badgeDiv = (
-          <div className='NavBar-badge'>
+          <div className='TabBar-badge'>
             {mentionCount}
           </div>
         );
@@ -61,7 +62,7 @@ export default class NavBar extends React.Component { // need "this"
       const requestingPermission = this.props.requestingPermission[index];
       const permissionOverlay = (
         <Overlay
-          className='NavBar-permissionOverlay'
+          className='TabBar-permissionOverlay'
           placement='bottom'
           show={requestingPermission && this.props.activeKey === index}
           target={() => this.refs[id]}
@@ -102,7 +103,7 @@ export default class NavBar extends React.Component { // need "this"
     if (this.props.showAddServerButton === true) {
       tabs.push(
         <NavItem
-          className='NavBar-addServerButton'
+          className='TabBar-addServerButton'
           key='addServerButton'
           id='addServerButton'
           eventKey='addServerButton'
@@ -130,9 +131,12 @@ export default class NavBar extends React.Component { // need "this"
         }}
       >
         <NavItem
-          className='navBarItem'
+          className='navBarItem MenuIcon'
         >
-          <Glyphicon glyph='menu-hamburger'/>
+          <img 
+            src='../assets/appicon.png'
+            height='22px'
+          />
         </NavItem>
         { tabs }
       </Nav>

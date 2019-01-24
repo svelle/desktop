@@ -1,3 +1,21 @@
+.NavBarFlexBox {
+  display: flex;
+  /* we use overflow: hidden to mask the scrollbar for the navbar
+  could be a bug in chromium because the calculated width matches the window width 
+  but scrollbar is still shown */
+  overflow: hidden; 
+}
+
+.NavBar.TabBar {
+  justify-self: auto;
+  flex-grow: 1;
+}
+
+.NavBar.MenuBar {
+  justify-self: flex-end;
+  flex-shrink: 0;
+}
+
 .NavBar {
   -webkit-user-select: none;
   -webkit-app-region: drag;
@@ -39,6 +57,7 @@
 }
 
 .NavBar .NavBar-addServerButton>a {
+  -webkit-app-region: no-drag;
   border: none;
   background: transparent;
   color: #999;

@@ -5,9 +5,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Glyphicon, Nav, NavItem, Overlay} from 'react-bootstrap';
 
-import {BrowserWindow} from 'electron';
+import {remote} from 'electron';
 
 import PermissionRequestDialog from './PermissionRequestDialog.jsx';
+
+function closeWindow () {
+  const window = remote.BrowserWindow.getFocusedWindow();
+  window.close();
+}
+
+function minimizeWindow() {
+  const window = remote.BrowserWindow.getFocusedWindow();
+  window.minimize();
+}
+
+function maximizeWindow() {
+  const window = remote.BrowserWindow.getFocusedWindow();
+  window.isMaximized() ? window.unmaximize() : window.maximize();
+}
 
 export default class NavBar extends React.Component { // need "this"
   render() {
@@ -99,8 +114,10 @@ export default class NavBar extends React.Component { // need "this"
       );
     }
     return (
+    <div 
+    className='NavBarFlexBox'>
       <Nav
-        className='NavBar'
+        className='NavBar TabBar'
         id={this.props.id}
         bsStyle='tabs'
         activeKey={this.props.activeKey}
@@ -118,29 +135,37 @@ export default class NavBar extends React.Component { // need "this"
           <Glyphicon glyph='menu-hamburger'/>
         </NavItem>
         { tabs }
-        <NavItem
-          className='navBarItem'
-          onClick={() => {
-            window.resizeTo(screen.width, screen.height);
-          }}
-        >
-          <Glyphicon glyph='chevron-down'/>
-        </NavItem>
-        <NavItem
-          className='navBarItem'
-        >
-          <Glyphicon glyph='chevron-up'/>
-        </NavItem>
-        <NavItem
-          className='navBarItem'
-          onClick={() => {
-            window.close();
-          }}
-        >
-          <Glyphicon glyph='remove'/>
-        </NavItem>
       </Nav>
-    );
+      <Nav
+      className='NavBar MenuBar'
+      bsStyle='tabs'
+      >
+        <NavItem
+            className='navBarItem'
+            onClick={() => {
+              minimizeWindow();
+            }}
+          >
+            <Glyphicon glyph='minus'/>
+          </NavItem>
+          <NavItem
+            className='navBarItem'
+            onClick={() => {
+              maximizeWindow();
+            }}
+          >
+            <Glyphicon glyph='unchecked'/>
+          </NavItem>
+          <NavItem
+            className='navBarItem'
+            onClick={() => {
+              closeWindow();
+            }}
+          >
+            <Glyphicon glyph='remove'/>
+          </NavItem>
+        </Nav>
+    </div>);
   }
 }
 
